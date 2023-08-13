@@ -1,4 +1,6 @@
-export class StackArray<T> {
+import { IStack } from "../contracts"
+
+export class StackArray<T> implements IStack<T>{
     private items: Array<T> = []
 
     push(element: T): void {
@@ -9,7 +11,7 @@ export class StackArray<T> {
         return this.items.pop()
     }
 
-    peek(): T {
+    peek(): T | undefined {
         return this.items[this.items.length -1]
     }
 
@@ -23,6 +25,10 @@ export class StackArray<T> {
 
     size(): number {
         return this.items.length
+    }
+
+    toString(): string {
+        return this.items.toString()
     }
 
 }

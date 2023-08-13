@@ -1,13 +1,13 @@
-import { StackArray } from "../../../src/entities/dataStructures"
-import { StackArrayTestBuilder } from "./builders"
+import { StackObject } from "../../../src/entities/dataStructures"
+import { StackObjectTestBuilder } from "./builders/StackObjectTestBuilder"
 
 describe('Stack Array', () => {
-    let stack: StackArray<string>
-    let emptyStack: StackArray<string>
+    let stack: StackObject<string>
+    let emptyStack: StackObject<string>
 
     beforeEach(() => {
-        stack = StackArrayTestBuilder.aStackArray<string>().populate('item', 10).build()        
-        emptyStack = StackArrayTestBuilder.aStackArray<string>().build()
+        stack = StackObjectTestBuilder.aStackObject<string>().populate('item', 10).build() 
+        emptyStack = StackObjectTestBuilder.aStackObject<string>().build()
     })
 
     describe('Method isEmpty', () => {
