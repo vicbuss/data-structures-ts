@@ -1,3 +1,5 @@
+import { NativeSetWithOperations } from "../dataStructures/NativeSetWithOperations"
+
 export type Literal = number | string | symbol
 
 export interface ISet<T extends Literal> {
@@ -17,5 +19,9 @@ export interface ISetOperations<T extends Literal> {
 }
 
 export interface ISetNativeOperations<T> {
-    union: (otherSet: Set<T>) => Set<T>
+    union: (otherSet: NativeSetWithOperations<T>) => NativeSetWithOperations<T>
+    intersection: (otherSet: NativeSetWithOperations<T>) => NativeSetWithOperations<T>
+    difference: (otherSet: NativeSetWithOperations<T>) => NativeSetWithOperations<T>
+    isSubsetOf: (otherSet: NativeSetWithOperations<T>) => boolean
+    toList: () => Array<T>
 }
